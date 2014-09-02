@@ -1,0 +1,31 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+      <servlet-name>Token</servlet-name>
+      <servlet-class>com.github.helloiampau.token.TokenController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>Token</servlet-name>
+      <url-pattern>/token</url-pattern>
+  </servlet-mapping>
+  <servlet>
+      <servlet-name>Protected</servlet-name>
+      <servlet-class>com.github.helloiampau.token.ProtectedResource</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>Protected</servlet-name>
+      <url-pattern>/protected</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <filter-name>User Filter</filter-name>
+    <filter-class>com.github.helloiampau.token.UserFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>User Filter</filter-name>
+    <servlet-name>Protected</servlet-name>
+  </filter-mapping>
+</web-app>
